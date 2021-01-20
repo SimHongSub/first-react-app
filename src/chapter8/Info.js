@@ -1,8 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
+
+function reducer(state, action) {
+  return {
+    ...state,
+    [action.name]: action.value,
+  };
+}
 
 const Info = () => {
-  const [name, setName] = useState("");
-  const [nickname, setNickname] = useState("");
+  const [state, dispatch] = useReducer(reducer, { name: "", nickname: "" });
+
+  const onChange = (e) => {
+    dispatch(e.target);
+  };
 
   /* 렌더링될 때마다 실행 */
   /*useEffect(() => {
@@ -26,32 +36,24 @@ const Info = () => {
   /* 뒷정리 함수 - 언마운트되기 전, 업데이트되기 직전에 실행 */
   useEffect(() => {
     console.log("effect");
-    console.log(name);
+    console.log(state.name);
     return () => {
       console.log("cleanup");
-      console.log(name);
+      console.log(state.name);
     };
-  }, [name]);
-
-  const onChangeName = (e) => {
-    setName(e.target.value);
-  };
-
-  const onChangeNickname = (e) => {
-    setNickname(e.target.value);
-  };
+  }, [state.name]);
 
   return (
     <div>
       <div>
-        <input value={name} onChange={onChangeName} />
-        <input value={nickname} onChange={onChangeNickname} />
+        <input name="name" value={state.name} onChange={onChange} />
+        <input name="nickname" value={state.nickname} onChange={onChange} />
       </div>
       <div>
-        <b>이름:</b> {name}
+        <b>이름:</b> {state.name}
       </div>
       <div>
-        <b>닉네임:</b> {nickname}
+        <b>닉네임:</b> {state.nickname}
       </div>
     </div>
   );

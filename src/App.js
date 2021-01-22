@@ -1,8 +1,8 @@
 import React from "react";
-import Average from "./chapter8/Average";
+import Info from "./chapter8/Info";
 
 const App = () => {
-  return <Average />;
+  return <Info />;
 };
 
 export default App;

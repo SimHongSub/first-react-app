@@ -1,18 +1,8 @@
-import React, { useReducer, useEffect } from "react";
-
-function reducer(state, action) {
-  return {
-    ...state,
-    [action.name]: action.value,
-  };
-}
+import React, { useEffect } from "react";
+import useInputs from "./useInputs";
 
 const Info = () => {
-  const [state, dispatch] = useReducer(reducer, { name: "", nickname: "" });
-
-  const onChange = (e) => {
-    dispatch(e.target);
-  };
+  const [state, onChange] = useInputs({ name: "", nickname: "" });
 
   /* 렌더링될 때마다 실행 */
   /*useEffect(() => {

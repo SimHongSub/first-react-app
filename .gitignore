@@ -26,6 +26,7 @@ yarn-error.log*
 .idea
 .eslintcache
 package-lock.json
+yarn.lock
 
 ### react ###
 .DS_*

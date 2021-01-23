@@ -1,8 +1,12 @@
 import React from "react";
-import Info from "./chapter8/Info";
+import StyledComponent from "./chapter9/StyledComponent";
 
 const App = () => {
-  return <Info />;
+  return (
+    <div>
+      <StyledComponent />
+    </div>
+  );
 };
 
 export default App;

@@ -1,8 +1,12 @@
 import React from "react";
-import CssModule from "./chapter9/CSSModule";
+import StyledComponent from "./chapter9/StyledComponent";
 
 const App = () => {
-  return <CssModule />;
+  return (
+    <div>
+      <StyledComponent />
+    </div>
+  );
 };
 
 export default App;

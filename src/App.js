@@ -1,12 +1,8 @@
 import React from "react";
-import StyledComponent from "./chapter9/StyledComponent";
+import TodoTemplate from "./chapter10/TodoTemplate";
 
 const App = () => {
-  return (
-    <div>
-      <StyledComponent />
-    </div>
-  );
+  return <TodoTemplate>Todo App을 만들자!</TodoTemplate>;
 };
 
 export default App;

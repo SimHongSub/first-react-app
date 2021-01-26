@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "classnames": "^2.2.6",
+    "immer": "^8.0.1",
     "include-media": "^1.4.9",
     "node-sass": "4.14.1",
     "open-color": "^1.8.0",

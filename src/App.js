@@ -1,9 +1,17 @@
-import React, { useState, useCallback } from "react";
-import { Route } from "react-router-dom";
-import NewsPage from "./chapter14/pages/NewsPage";
+import React from "react";
+import ColorBox from "./chapter15/components/ColorBox";
+import { ColorProvider } from "./chapter15/contexts/color";
+import SelectColors from "./chapter15/components/SelectColors";
 
 const App = () => {
-  return <Route path="/:category?" component={NewsPage} />;
+  return (
+    <ColorProvider>
+      <div>
+        <SelectColors />
+        <ColorBox />
+      </div>
+    </ColorProvider>
+  );
 };
 
 export default App;

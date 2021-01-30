@@ -1,26 +1,16 @@
 import { CHANGE_INPUT, INSERT, TOGGLE, REMOVE } from "../constants/ActionTypes";
+import { createActions } from "redux-actions";
 
-export const changeInput = (input) => ({
-  type: CHANGE_INPUT,
-  input,
-});
+export const changeInput = createActions(CHANGE_INPUT, (input) => input);
 
 let id = 3;
-export const insert = (text) => ({
-  type: INSERT,
-  todo: {
-    id: id++,
-    text,
-    done: false,
-  },
-});
 
-export const toggle = (id) => ({
-  type: TOGGLE,
-  id,
-});
+export const insert = createActions(INSERT, (text) => ({
+  id: id++,
+  text,
+  done: false,
+}));
 
-export const remove = (id) => ({
-  type: REMOVE,
-  id,
-});
+export const toggle = createActions(TOGGLE, (id) => id);
+
+export const remove = createActions(REMOVE, (id) => id);

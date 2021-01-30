@@ -1,16 +1,14 @@
 import React from "react";
-import ColorBox from "./chapter15/components/ColorBox";
-import { ColorProvider } from "./chapter15/contexts/color";
-import SelectColors from "./chapter15/components/SelectColors";
+import CounterContainer from "./chapter17/containers/CounterContainer";
+import TodosContainer from "./chapter17/containers/TodosContainer";
 
 const App = () => {
   return (
-    <ColorProvider>
-      <div>
-        <SelectColors />
-        <ColorBox />
-      </div>
-    </ColorProvider>
+    <div>
+      <CounterContainer />
+      <hr />
+      <TodosContainer />
+    </div>
   );
 };
 

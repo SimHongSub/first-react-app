@@ -1,13 +1,11 @@
 import React from "react";
-import CounterContainer from "./chapter17/containers/CounterContainer";
-import TodosContainer from "./chapter17/containers/TodosContainer";
+import SampleContainer from "./chapter18/containers/SampleContainer";
+import CounterContainer from "./chapter18/containers/CounterContainer";
 
 const App = () => {
   return (
     <div>
-      <CounterContainer />
-      <hr />
-      <TodosContainer />
+      <SampleContainer />
     </div>
   );
 };

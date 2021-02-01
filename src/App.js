@@ -5,7 +5,7 @@ import CounterContainer from "./chapter18/containers/CounterContainer";
 const App = () => {
   return (
     <div>
-      <CounterContainer />
+      <SampleContainer />
     </div>
   );
 };

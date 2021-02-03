@@ -1,11 +1,23 @@
-import React from "react";
-import SampleContainer from "./chapter18/containers/SampleContainer";
-import CounterContainer from "./chapter18/containers/CounterContainer";
+import React, { useState, Suspense } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+const SplitMe = React.lazy(() => import("./chapter19/SplitMe"));
 
 const App = () => {
+  const [visible, setVisible] = useState(false);
+  const onClick = () => {
+    setVisible(true);
+  };
+
   return (
-    <div>
-      <SampleContainer />
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p onClick={onClick}>Hello React!</p>
+        <Suspense fallback={<div>loading...</div>}>
+          {visible && <SplitMe />}
+        </Suspense>
+      </header>
     </div>
   );
 };

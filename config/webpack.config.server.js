@@ -149,7 +149,7 @@ module.exports = {
   },
   externals: [
     nodeExternals({
-      allowList: [/@babel/],
+      allowlist: [/@babel/],
     }),
   ],
 };

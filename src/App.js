@@ -1,19 +1,20 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import Menu from "./chapter20/components/Menu";
-import RedPage from "./chapter20/pages/RedPage";
-import BluePage from "./chapter20/pages/BluePage";
-import UsersPage from "./chapter20/pages/UsersPage";
+import PostListPage from "./chapter24/pages/PostListPage";
+import LoginPage from "./chapter24/pages/LoginPage";
+import RegisterPage from "./chapter24/pages/RegisterPage";
+import WritePage from "./chapter24/pages/WritePage";
+import PostPage from "./chapter24/pages/PostPage";
 
 const App = () => {
   return (
-    <div>
-      <Menu />
-      <hr />
-      <Route path="/red" component={RedPage} />
-      <Route path="/blue" component={BluePage} />
-      <Route path="/users" component={UsersPage} />
-    </div>
+    <>
+      <Route path={["/@:username", "/"]} component={PostListPage} exact />
+      <Route path="/login" component={LoginPage} />
+      <Route path="/register" component={RegisterPage} />
+      <Route path="/write" component={WritePage} />
+      <Route path="/@:username/:postId" component={PostPage} />
+    </>
   );
 };
 
